@@ -29,7 +29,8 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     String mCurrentPhotoPath;
-    static final int REQUEST_TAKE_PHOTO = 1;
+    static final int REQUEST_TAKE_PHOTO = 2;
+    static final int  PICK_FROM_CAMERA = 3;
 
 
 
@@ -82,6 +83,11 @@ public class MainActivity extends AppCompatActivity {
         btn_photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(
+                        MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA);
+
+                startActivity(intent);
+
 
             }
         });
